@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirawn Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"  href="phtos/icon.png">
+</head>
+<body>
+<div class="menu">
+    <div class="logo">
+        <a href="index.html"><img src="phtos/img.png" alt="Mirawn Gallery Logo"></a>
+    </div>
+    <ul class="menu-items"> 
+        <li><a href="#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="submenu">
+            <a href="#portfolio">Portfolio</a>
+            <ul class="dropdown">
+                <li><a href="crete.html">CrEte</a></li>
+                <li><a href="street.html">SrEet</a></li>
+                <li><a href="people.html">PeoPle</a></li>
+                <li><a href="nature.html">NatURe</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="column">
+        <img src="phtos/people1.png" width="100%">
+    </div>
+    <div class="column">
+        <img src="phtos/people2.png" width="70%">
+    </div>
+    <div class="column">
+        <img src="phtos/people3.png" width="85%">
+    </div>
+    <div class="column">
+        <img src="phtos/people4.png" width="100%">
+    </div>
+    <div class="column">
+        <img src="phtos/people5.png" width="70%">
+    </div>
+    <div class="column">
+        <img src="phtos/people6.png" width="90%">
+    </div>
+    <div class="column">
+        <img src="phtos/people7.png" width="65%">
+    </div>
+    <div class="column">
+        <img src="phtos/people8.png" width="110%">
+    </div>
+    <div class="column">
+        <img src="phtos/people9.png" width="90%">
+    </div>
+    <div class="column">
+        <img src="phtos/people10.png" width="100%">
+    </div>
+    <div class="column">
+        <img src="phtos/people11.png" width="80%">
+    </div>
+    <div class="column">
+        <img src="phtos/people12.png" width="110%" height="auto">
+    </div>
+    <div class="column">
+        <img src="phtos/people13.png" width="170%">
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let lastScrollTop = 0;
+        const menu = document.querySelector('.menu');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                menu.classList.add('hidden');
+            } else {
+                // Scrolling up
+                menu.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    });
+</script>
+
+<!--\
+<script>
+    var faviconURL = 'phtos/icon.png'
+
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = faviconURL
+    document.getElementsByTagName('head')[0].appendChild(link);
+</script> 
+-->
+
+</body>
+</html>

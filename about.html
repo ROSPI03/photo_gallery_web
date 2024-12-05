@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirawn Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"  href="phtos/icon.png">
+</head>
+<body>
+<div class="menu">
+    <div class="logo">
+        <a href="index.html"><img src="phtos/img.png" alt="Mirawn Gallery Logo"></a>
+    </div>
+    <ul class="menu-items">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="submenu">
+            <a href="#portfolio">Portfolio</a>
+            <ul class="dropdown">
+                <li><a href="crete.html">CrEte</a></li>
+                <li><a href="street.html">SrEet</a></li>
+                <li><a href="people.html">PeoPle</a></li>
+                <li><a href="nature.html">NatURe</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+
+<div class="about">
+    <h1>About Mirawn Gallery</h1>
+    <p>Welcome to Mirawn Gallery, a haven for art enthusiasts and collectors. Our gallery is dedicated to showcasing the finest contemporary art from both emerging and established artists. Our mission is to bring the beauty and power of art to the community and beyond.</p>
+    
+    <h2>Our Story</h2>
+    <p>Founded in 2020, Mirawn Gallery began as a small, passionate project by a group of art lovers. Over the years, we have grown into a respected name in the art world, known for our diverse and dynamic exhibitions. We believe in the transformative power of art and strive to provide a platform for artists to share their vision with the world.</p>
+    
+    <h2>Meet the Artists</h2>
+    <p>Our gallery features a diverse range of artists from different backgrounds and styles. Each artist brings their unique perspective and creativity, contributing to the vibrant and eclectic atmosphere of Mirawn Gallery. From abstract to realism, our collection spans various genres, ensuring there is something for every art lover.</p>
+    
+    <h2>Visit Us</h2>
+    <p>We invite you to visit our gallery and experience the art firsthand. Whether you're an avid collector or just starting to explore the art world, Mirawn Gallery is the perfect place to discover new and exciting works of art. We look forward to welcoming you!</p>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let lastScrollTop = 0;
+        const menu = document.querySelector('.menu');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                menu.classList.add('hidden');
+            } else {
+                // Scrolling up
+                menu.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    });
+</script>

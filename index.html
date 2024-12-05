@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirawn Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="phtos/icon.png">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="logo">
+            <a href="index.html"><img src="phtos/img.png" alt="Mirawn Gallery Logo"></a>
+        </div>
+        <ul class="menu-items">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="submenu">
+                <a href="#portfolio">Portfolio</a>
+                <ul class="dropdown">
+                    <li><a href="crete.html">CrEte</a></li>
+                    <li><a href="street.html">SrEet</a></li>
+                    <li><a href="people.html">PeoPle</a></li>
+                    <li><a href="nature.html">NatURe</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    
+
+    <style>
+        html, body {
+          margin: 0;
+          padding: 0;
+          width: 100vw;
+          height: 100vh;
+          overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+    
+        .slideshow-container {
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+        }
+    
+        .slideshow-container img {
+          width: 100vw;
+          height: auto;
+          display: block;
+        }
+    
+        .mySlides {
+          display: none;
+        }
+    
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          padding: 16px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          z-index: 10;
+        }
+    
+        .prev {
+          left: 0;
+        }
+    
+        .next {
+          right: 0;
+        }
+    
+        .dot {
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+        }
+    
+        .active {
+          background-color: #717171;
+        }
+    
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+    
+        @keyframes fade {
+          from { opacity: 0.4; }
+          to { opacity: 1; }
+        }
+      </style>
+    </head>
+    <body>
+    
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="phtos/crete3.png" alt="Crete 3">
+        <div class="text">Caption Text</div>
+      </div>
+    
+      <div class="mySlides fade">
+        <img src="phtos/nature3.png" alt="Nature 3">
+        <div class="text">Caption Two</div>
+      </div>
+    
+      <div class="mySlides fade">
+        <img src="phtos/street18.png" alt="Street 18">
+        <div class="text">Caption Three</div>
+      </div>
+    
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+    
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+    
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+    
+      function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+      }
+    </script>
+
+     
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let lastScrollTop = 0;
+            const menu = document.querySelector('.menu');
+
+            window.addEventListener('scroll', function () {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    menu.classList.add('hidden');
+                } else {
+                    // Scrolling up
+                    menu.classList.remove('hidden');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+
+    <!--\
+<script>
+    var faviconURL = 'phtos/icon.png'
+
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = faviconURL
+    document.getElementsByTagName('head')[0].appendChild(link);
+</script> 
+-->
+
+</body>
+</html>
